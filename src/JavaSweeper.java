@@ -17,7 +17,10 @@ public class JavaSweeper extends JFrame {
             @Override
             protected void paintComponent(Graphics g){
                 super.paintComponent(g);
-                g.drawImage(getImage(),0, 0, this);
+                g.drawImage(getImage("bomb"),0, 0, this);
+                g.drawImage(getImage("num1"),50, 0, this);
+                g.drawImage(getImage("num1"),0, 50, this);
+                g.drawImage(getImage("num1"),50, 50, this);
             }
         };
         setPreferredSize(new Dimension(500, 300));
@@ -31,8 +34,8 @@ public class JavaSweeper extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }
-    private Image getImage(){
-      ImageIcon icon = new ImageIcon("res/img/bomb.png");
+    private Image getImage(String name){
+      ImageIcon icon = new ImageIcon("res/img/" + name + ".png");
       return icon.getImage();
     }
 }
